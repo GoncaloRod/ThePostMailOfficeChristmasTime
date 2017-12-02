@@ -3,12 +3,13 @@
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
 {
-	public Camera cam;
 	private Rigidbody rb;
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 rotation = Vector3.zero;
 	private float cameraRotationX = 0f;
 	private float currentCameraRotationX = 0f;
+
+	public Camera cam;
 
 	private void Start ()
 	{

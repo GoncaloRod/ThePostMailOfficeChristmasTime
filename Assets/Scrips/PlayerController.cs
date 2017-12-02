@@ -4,9 +4,14 @@
 public class PlayerController : MonoBehaviour
 {
 	private PlayerMotor motor;
+	private bool hasPickup = false;
+	private Pickup pickup;
 
+	public Camera cam;
+	public GameObject holder;
 	public float speed = 5f;
 	public float lookSense = 3f;
+	public float throwForce = 100f;
 
 
 	private void Start ()
@@ -48,7 +53,43 @@ public class PlayerController : MonoBehaviour
 	
 		#region pickup
 
-		
+		if (!hasPickup)
+		{
+			if (cam != null)
+			{
+				// Check if player is pointing to a pickup
+				RaycastHit hit;
+				if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 2f) && !hasPickup)
+				{
+					pickup = hit.collider.GetComponent<Pickup>();
+
+					if (pickup != null)
+					{
+						// Check if player wants to pick the pickup
+						if (Input.GetKeyDown(KeyCode.E))
+						{
+							// Pick pickup
+							hasPickup = true;
+							
+							if (holder != null)
+							{
+								pickup.Pick(holder.transform);
+							}
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			// Check if player wants to drop the pickup
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+				// Drop pickup
+				hasPickup = false;
+				pickup.Throw(throwForce);
+			}
+		}
 
 		#endregion
 	}
