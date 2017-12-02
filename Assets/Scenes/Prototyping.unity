@@ -833,13 +833,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153361567}
-  m_LocalRotation: {x: 0.2256312, y: 0, z: 0, w: 0.9742128}
-  m_LocalPosition: {x: 0, y: 6.33, z: -5.74}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.64, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1651543699}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.08, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165881109 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b5290684820a94548bedb95083785116, type: 3}
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 1212208235}
   - component: {fileID: 1212208234}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1256,6 +1256,7 @@ Transform:
   m_Children:
   - {fileID: 145186117}
   - {fileID: 249435732}
+  - {fileID: 1905633717}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1267,13 +1268,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580266186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec87567eb926b2040bcdfb5b30175fba, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ff75debceba5f347a7acbf4dc26b176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 1984163154202236, guid: 0380bf8b8d3b01c40987d4fec0d457fa, type: 2}
-  spawnPoint: {fileID: 0}
+  mails:
+  - {fileID: 1052305046544190, guid: 9f442f839ca7c59498fd88f0cfd3e394, type: 2}
+  spawnPoint: {fileID: 1905633716}
   firstSpawnTime: 2
-  respawnSpeed: 5
+  respawnTime: 5
+  mailThrowForce: 200
 --- !u!1 &1602971982 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b5290684820a94548bedb95083785116, type: 3}
@@ -1444,6 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf318b7191a53fa4897acd6f0793aa9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 1153361570}
 --- !u!114 &1651543696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,15 +1494,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1651543694}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.93, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 10.36, y: 0, z: -2.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1153361571}
   - {fileID: 1212208233}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1658456014
 Prefab:
   m_ObjectHideFlags: 0
@@ -1921,6 +1925,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5290684820a94548bedb95083785116, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1905633716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1905633717}
+  m_Layer: 0
+  m_Name: MailSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905633717
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905633716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.92, y: 4.63, z: -12.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1580266187}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1981813112
 Prefab:
   m_ObjectHideFlags: 0
