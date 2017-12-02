@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	
 	private void Update ()
 	{
+		#region movement
+
 		// Calculate movement
 		float xMov = Input.GetAxis("Horizontal");
 		float yMov = Input.GetAxis("Vertical");
@@ -29,9 +31,25 @@ public class PlayerController : MonoBehaviour
 		// Apply movement
 		motor.Move(velocity);
 
+		#endregion
+
+		#region rotation
+
 		// Calculate rotation
 		float yRot = Input.GetAxisRaw("Mouse X");
 		Vector3 rotation = new Vector3(0f, yRot, 0f) * lookSense;
 		motor.Rotate(rotation);
+
+		float xRot = Input.GetAxisRaw("Mouse Y");
+		float cameraRotationX =  xRot * lookSense;
+		motor.RotateCamera(cameraRotationX);
+
+		#endregion
+	
+		#region pickup
+
+		
+
+		#endregion
 	}
 }

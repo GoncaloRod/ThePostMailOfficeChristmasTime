@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scrips\MailSpawner.cs" />
+     <Compile Include="Assets\Scrips\Pickup.cs" />
      <Compile Include="Assets\Scrips\PlayerController.cs" />
      <Compile Include="Assets\Scrips\PlayerMotor.cs" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
