@@ -2141,14 +2141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff75debceba5f347a7acbf4dc26b176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 5
+  player: {fileID: 1651543694}
   mails:
   - {fileID: 1052305046544190, guid: 9f442f839ca7c59498fd88f0cfd3e394, type: 2}
   - {fileID: 1287012778992406, guid: 8e74f7100b6ab79429b1411702e838a4, type: 2}
   - {fileID: 1116592032963958, guid: 52e89e1c7ac03374d892b67b16bbdc2d, type: 2}
   - {fileID: 1617743900755610, guid: 44ea5f8ed2cbe954e8fac9ff9639f03c, type: 2}
   spawnPoint: {fileID: 1905633716}
-  firstSpawnTime: 2
-  respawnTime: 5
+  startingRespawnTime: 5
   mailThrowForce: 200
 --- !u!1 &1602971982 stripped
 GameObject:
@@ -2391,8 +2392,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc34da51e85b894ab6f779b0d6c47a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xpPerLevel: 100
   money: 5000
   xp: 0
+  level: 0
 --- !u!1 &1655908266
 GameObject:
   m_ObjectHideFlags: 0
