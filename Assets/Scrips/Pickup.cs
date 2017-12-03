@@ -6,6 +6,8 @@ public class Pickup : MonoBehaviour
 {
 	private Rigidbody rb;
 	private Collider cldr;
+
+	public string type;
 	
 	private void Start()
 	{
