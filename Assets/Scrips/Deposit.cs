@@ -4,6 +4,7 @@ using UnityEditor;
 public class Deposit : MonoBehaviour
 {
 	public GameObject correctObject;
+	public GameObject player;
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -18,14 +19,40 @@ public class Deposit : MonoBehaviour
 				{
 					if (pickup.type == correctPickup.type)
 					{
-						// Add money and xp to player
+						if (player != null)
+						{
+							// Play correct sound
+
+							// Add money and xp to player
+							PlayerStats stats = player.GetComponent<PlayerStats>();
+
+							if (stats != null)
+							{
+								stats.money += pickup.moneyIncrement;
+								stats.xp += pickup.xpIncrement;
+							}
+						}
 					}
 					else
 					{
-						// Remove money from player
+						if (player != null)
+						{
+							// Play incorrect sound
+
+							// Remove money from player
+							PlayerStats stats = player.GetComponent<PlayerStats>();
+
+							if (stats != null)
+							{
+								stats.money -= pickup.moneyDecrement;
+							}
+						}
 					}
 				}
 			}
 		}
+
+		// Destroy pickup
+		Destroy(other.gameObject);
 	}
 }

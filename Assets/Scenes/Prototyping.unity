@@ -688,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObject: {fileID: 1116592032963958, guid: 52e89e1c7ac03374d892b67b16bbdc2d,
     type: 2}
+  player: {fileID: 1651543694}
 --- !u!1 &398495394
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObject: {fileID: 1287012778992406, guid: 8e74f7100b6ab79429b1411702e838a4,
     type: 2}
+  player: {fileID: 1651543694}
 --- !u!1001 &685131866
 Prefab:
   m_ObjectHideFlags: 0
@@ -1218,6 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObject: {fileID: 1052305046544190, guid: 9f442f839ca7c59498fd88f0cfd3e394,
     type: 2}
+  player: {fileID: 1651543694}
 --- !u!65 &944576179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2299,6 +2302,7 @@ GameObject:
   - component: {fileID: 1651543698}
   - component: {fileID: 1651543696}
   - component: {fileID: 1651543695}
+  - component: {fileID: 1651543700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2376,6 +2380,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1651543700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1651543694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc34da51e85b894ab6f779b0d6c47a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 5000
+  xp: 0
 --- !u!1 &1655908266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,6 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObject: {fileID: 1617743900755610, guid: 44ea5f8ed2cbe954e8fac9ff9639f03c,
     type: 2}
+  player: {fileID: 1651543694}
 --- !u!1 &1708085045 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b5290684820a94548bedb95083785116, type: 3}

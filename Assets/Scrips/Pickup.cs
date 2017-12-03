@@ -7,12 +7,28 @@ public class Pickup : MonoBehaviour
 	private Rigidbody rb;
 	private Collider cldr;
 
+	public GameObject player;
 	public string type;
+	public float moneyIncrement = 10f;
+	public long xpIncrement = 100;
+	public float moneyDecrement = 20f;
+	public float moneyDecrementOnWait = 0.1f;
 	
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		cldr = GetComponent<Collider>();
+		player = GameObject.Find("Player");
+	}
+
+	private void Update()
+	{
+		if (player != null)
+		{
+			PlayerStats stats = player.GetComponent<PlayerStats>();
+
+			stats.money -= moneyDecrementOnWait * Time.deltaTime;
+		}
 	}
 
 	public void Pick(Transform newParent)
